@@ -97,3 +97,4 @@ C:\Users\DELL NV2 PRO\Downloads\pokemon 1\obj\Debug\net8.0\refint\pokemon 1.dll
 C:\Users\DELL NV2 PRO\Downloads\pokemon 1\obj\Debug\net8.0\pokemon 1.pdb
 C:\Users\DELL NV2 PRO\Downloads\pokemon 1\obj\Debug\net8.0\pokemon 1.genruntimeconfig.cache
 C:\Users\DELL NV2 PRO\Downloads\pokemon 1\obj\Debug\net8.0\ref\pokemon 1.dll
+C:\Users\DELL NV2 PRO\Downloads\pokemon 1\obj\Debug\net8.0\pokemon 1.sourcelink.json

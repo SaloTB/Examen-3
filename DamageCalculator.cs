@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Pokemon_1;
 using pokemon_1;
+using static pokemon_1.Move;
 
 namespace Pokemon_1
 {
@@ -67,19 +68,24 @@ namespace Pokemon_1
 
         public static int CalculateDamage(Pokemon attacker, Pokemon defender, Move move, double mod)
         {
+            if (attacker == null || defender == null || move == null)
+                throw new ArgumentNullException("Attacker, defender y move no pueden ser nulos.");
+
             int atkStat = (move.MoveType == MoveType.Physical) ? attacker.Attack : attacker.SpAttack;
             int defStat = (move.MoveType == MoveType.Physical) ? defender.Defense : defender.SpDefense;
 
             if (defStat <= 0) defStat = 1;
 
-            double levelFactor = (2.0 * attacker.Level / 5.0) + 2.0; 
+            double levelFactor = (2.0 * attacker.Level / 5.0) + 2.0;
             double baseTerm = levelFactor * move.BasePower * ((double)atkStat / defStat);
             double dmgBeforeDivide = baseTerm / 50.0 + 2.0;
 
             double dmg = dmgBeforeDivide * mod;
 
+
             return (int)Math.Floor(dmg);
         }
+
     }
 
 }

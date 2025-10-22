@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace pokemon_1
-{ 
+{
     public class Move
     {
         public string Name { get; set; }
@@ -14,18 +14,18 @@ namespace pokemon_1
         public PokemonType Type { get; set; }
         public MoveType MoveType { get; set; }
 
-        public Move(string name, int basePower, PokemonType type, MoveType moveType)
+        public Move(string name, PokemonType type, MoveType moveType, int basePower = 100)
         {
             Name = name;
-            BasePower = basePower;
             Type = type;
-            MoveType = moveType;
-        }
+            MoveType = moveType; 
 
-        public Move()
-        {
-            Name = "Default Move";
-            BasePower = 100;   
+            if (basePower < 1)
+                BasePower = 1;
+            else if (basePower > 255)
+                BasePower = 255;
+            else
+                BasePower = basePower;
         }
     }
 
@@ -35,4 +35,3 @@ namespace pokemon_1
         Special
     }
 }
-
